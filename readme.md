@@ -1,1 +1,1 @@
-# An example of datastar Go application
+# An example of [Datastar](https://github.com/starfederation/datastar) Go application

@@ -32,9 +32,10 @@ func main() {
 		}
 
 		sse := datastar.NewSSE(w, r)
-
-		for i := 0; i < len(message); i++ {
-			sse.MergeFragments(`<div id="message">` + message[:i+1] + `</div>`)
+		runes := []rune(message)  // 转换为rune数组
+		
+		for i := 0; i < len(runes); i++ {
+			sse.MergeFragments(`<div id="message">` + string(runes[:i+1]) + `</div>`)
 			time.Sleep(store.Delay * time.Millisecond)
 		}
 	})
